@@ -14,6 +14,19 @@ namespace OdeToFood
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(
+				name: "Cuisine",
+				url: "cuisine/{name}",
+				defaults: new { controller = "Cuisine", action = "Search", name = "" }
+			);
+
+			//tegi Riho-Martin Haavasalu
+			routes.MapRoute(
+				name: "Seafood",
+				url: "seafood/{culture}/{food}",
+				defaults: new { controller = "Seafood", action = "Search", culture = "", food = "" }
+			);
+
+			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
