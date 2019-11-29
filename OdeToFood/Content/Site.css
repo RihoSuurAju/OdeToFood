@@ -17,6 +17,12 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Comic Sans MS', sans-serif;
+    color: cornflowerblue;
+}
+
 input,
 select,
 textarea {
@@ -29,4 +35,21 @@ textarea {
 
 .learnmore {
     background-color: mediumslateblue;
+}
+
+
+.review {
+    padding: 2px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.review h4 {
+    color: darkmagenta;
+    padding: 5px;
+    background: #f2bfe5;
+}
+
+.review p {
+    font-size: .8em;
 }
