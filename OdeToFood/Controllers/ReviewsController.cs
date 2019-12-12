@@ -9,6 +9,14 @@ namespace OdeToFood.Controllers
 {
     public class ReviewsController : Controller
     {
+
+		public ActionResult BestReview()
+		{
+			var bestReview = from r in _reviews
+							 orderby r.Rating descending
+							 select r;
+			return PartialView("_Review", bestReview.First());
+		}
         // GET: Reviews
         public ActionResult Index()
         {
@@ -49,6 +57,7 @@ namespace OdeToFood.Controllers
         // GET: Reviews/Edit/5
         public ActionResult Edit(int id)
         {
+			var review = _reviews.Single(r => r.Id == id);
             return View();
         }
 
@@ -56,17 +65,14 @@ namespace OdeToFood.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+			var review = _reviews.Single(r => r.Id == id);
+			if (TryUpdateModel(review))
+			{
+				// ..
+				return RedirectToAction("Index");
+			}
+			return View(review);
+		}
 
         // GET: Reviews/Delete/5
         public ActionResult Delete(int id)
@@ -119,5 +125,21 @@ namespace OdeToFood.Controllers
 				Rating = 10,
 			}
 		};
-    }
+
+		/* public ActionResult Index([Bind(Prefix = "id")] int restaurantId)
+		{
+			var restaurant = db.Restaurants.Find(restaurantId);
+			if (restaurant != null)
+			{
+				return View(restaurant);
+			}
+			return HttpNotFound();
+		}
+		protected override void Dispose(bool disposing)
+		{
+			if (db != null) db.Dispose();
+			base.Dispose(disposing);
+		}
+		*/
+	}
 }

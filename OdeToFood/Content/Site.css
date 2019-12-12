@@ -53,3 +53,20 @@ textarea {
 .review p {
     font-size: .8em;
 }
+
+.ode2food {
+    margin-left: 18%;
+}
+
+.logo {
+    width: 10%;
+    height: 9%;
+}
+
+.ode2food-logo {
+    background: url(../img/kringel.png) no-repeat top left;
+    display: block;
+    background-size: 100%;
+    width: 60px;
+    height: 55px;
+}
