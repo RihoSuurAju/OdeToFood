@@ -13,7 +13,22 @@ namespace OdeToFood.Controllers
 
 		public ActionResult Index()
 		{
-			var model = _db.Restaurants.ToList();
+			var model =
+				from r in _db.Restaurants
+				orderby r.Reviews.Average(review => review.Rating) descending
+				select new RestaurantListViewModel{
+					Id = r.Id,
+					Name = r.Name,
+					City = r.City,
+					Country = r.Country,
+					CountOfReviews = r.Reviews.Count()
+				};
+
+			//var controller = RouteData.Values["controller"];
+			//var action = RouteData.Values["action"];
+			//var id = RouteData.Values["id"];
+
+			//var message = String.Format("{0}::{1} {2}", controller, action, id);
 
 			return View(model);
 		}
@@ -22,7 +37,7 @@ namespace OdeToFood.Controllers
 		{
 			var Model = new AboutModel();
 			Model.Name = "Riho-Martin";
-			Model.Location = "Tallin, Estonia";
+			Model.Location = "Tallinn, Estonia";
 			Model.Age = 17;
 
 			return View(Model);
@@ -37,7 +52,12 @@ namespace OdeToFood.Controllers
 
 		protected override void Dispose(bool disposing)
 		{
-			if (_db != null) base.Dispose(disposing);
+			if (_db != null)
+			{
+				_db.Dispose();
+			}
+
+		    base.Dispose(disposing);
 		}
 	}
 }

@@ -12,7 +12,6 @@ namespace OdeToFood.Controllers
         public ActionResult Search(string name)
         {
 			throw new Exception("Something terrible has happened!");
-			return Content("Hello " + name );
         }
     }
 }
