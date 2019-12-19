@@ -9,12 +9,9 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<OdeToFood.Models.OdeToFoodDb>
     {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
+		public Configuration() => AutomaticMigrationsEnabled = true;
 
-        protected override void Seed(OdeToFood.Models.OdeToFoodDb context)
+		protected override void Seed(OdeToFood.Models.OdeToFoodDb context)
         {
 			context.Restaurants.AddOrUpdate(r => r.Name,
 				new Restaurant { Name = "Stone Burgers", City = "AAAAA", Country = "The Republic of Ree" },

@@ -16,10 +16,9 @@ namespace OdeToFood
 			routes.MapRoute(
 				name: "Cuisine",
 				url: "cuisine/{name}",
-				defaults: new { controller = "Cuisine", action = "Search", name = "" }
+				defaults: new { controller = "Cuisine", action = "Search", name="" }
 			);
 
-			//tegi Riho-Martin Haavasalu
 			routes.MapRoute(
 				name: "Seafood",
 				url: "seafood/{culture}/{food}",

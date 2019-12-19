@@ -11,11 +11,12 @@ namespace OdeToFood.Controllers
 	{
 		OdeToFoodDb _db = new OdeToFoodDb();
 
-		public ActionResult Index()
+		public ActionResult Index(string searchTerm = null)
 		{
 			var model =
 				from r in _db.Restaurants
-				orderby r.Reviews.Average(review => review.Rating) descending
+				orderby r.Reviews.Average(review => review.Rating)
+				where (searchTerm == null || r.Name.StartsWith(searchTerm))
 				select new RestaurantListViewModel{
 					Id = r.Id,
 					Name = r.Name,

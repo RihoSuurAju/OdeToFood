@@ -6,6 +6,12 @@
 
 @model IEnumerable<OdeToFood.Models.RestaurantListViewModel>
 
+<form method="get">
+
+    <input type="search" name="searchTerm" />
+    <input class="search-by-name" type="submit" value="Search by name" />
+</form>
+
 @foreach (var item in Model)
 {
     <div>
@@ -17,7 +23,8 @@
 }
 
 <form action="/seafood/culture/food" method="post">
-    <h4>Culture:</h4>   <input type="text" name="culture" /><br />
-    <h4>Food Type:</h4> <input type="text" name="food" /><br /><br />
-    <input type="submit" value="Order" />
+    <span class="orderit">Order some nice seafood of your choosing!</span>
+    <h4>Culture:</h4>   <input type="text" name="culture" value="japanese"/><br />
+    <h4>Seafood Type:</h4> <input type="text" name="food" value="sushi"/><br /><br />
+    <input class="order-btn" type="submit" value="Order" />
 </form>

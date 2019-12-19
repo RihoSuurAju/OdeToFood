@@ -1,4 +1,4 @@
-﻿/*using OdeToFood.Models;
+﻿using OdeToFood.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,7 +104,7 @@ namespace OdeToFood.Controllers
 				Name = "Cinnamon Club",
 				City = "London",
 				Country = "UK",
-				Rating = 10,
+				Rating = 10
 			},
 
 			new RestaurantReview
@@ -113,7 +113,7 @@ namespace OdeToFood.Controllers
 				Name = "Marrakesh",
 				City = "D.C",
 				Country = "USA",
-				Rating = 10,
+				Rating = 10
 			},
 
 			new RestaurantReview
@@ -122,11 +122,11 @@ namespace OdeToFood.Controllers
 				Name = "The House of Elliot",
 				City = "Ghent",
 				Country = "Belgium",
-				Rating = 10,
+				Rating = 10
 			}
 		};
 
-		/* public ActionResult Index([Bind(Prefix = "id")] int restaurantId)
+		/*public ActionResult Index([Bind(Prefix = "id")] int restaurantId)
 		{
 			var restaurant = db.Restaurants.Find(restaurantId);
 			if (restaurant != null)
@@ -141,6 +141,5 @@ namespace OdeToFood.Controllers
 			base.Dispose(disposing);
 		}
 		*/
-/*	}
+	}
 }
-*/

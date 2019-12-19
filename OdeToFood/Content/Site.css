@@ -36,10 +36,25 @@ textarea {
     padding-bottom: 10px;
 }
 
+.search-by-name {
+    border-color: darkred;
+    background-color: honeydew;
+}
+
+.orderit {
+    color: red;
+    font-size: 1.3rem;
+}
+
 .review h4 {
     color: darkmagenta;
     padding: 5px;
     background: #f2bfe5;
+}
+
+.order-btn {
+    border-color: cornflowerblue;
+    background-color: bisque;
 }
 
 .review p {
