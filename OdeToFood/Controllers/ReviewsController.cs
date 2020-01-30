@@ -47,12 +47,12 @@ namespace OdeToFood.Controllers
 		}
 
 		[HttpGet]
-		public ActionResult Create(int restaurantId)
+		public ActionResult Create(int Id)
 		{
-			var model = _db.Restaurants.Find(restaurantId);
+			var model = _db.Restaurants.Find(Id);
 			ViewBag.Name = model.Name;
 			ViewBag.restaurantId = model.Id;
-			return View();
+			return View(model);
 		}
 		[HttpPost]
 		public ActionResult Create(RestaurantReview review)
@@ -92,7 +92,7 @@ namespace OdeToFood.Controllers
 		{
 			new RestaurantReview
 			{
-				Id = 1,
+				Id = 4,
 				Name = "Cinnamon Club",
 				City = "London",
 				Country = "UK",
@@ -101,7 +101,7 @@ namespace OdeToFood.Controllers
 
 			new RestaurantReview
 			{
-				Id = 2,
+				Id = 5,
 				Name = "Marrakesh",
 				City = "D.C",
 				Country = "USA",
@@ -110,7 +110,7 @@ namespace OdeToFood.Controllers
 
 			new RestaurantReview
 			{
-				Id = 3,
+				Id = 6,
 				Name = "The House of Elliot",
 				City = "Ghent",
 				Country = "Belgium",
