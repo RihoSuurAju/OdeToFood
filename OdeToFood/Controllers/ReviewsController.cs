@@ -47,13 +47,14 @@ namespace OdeToFood.Controllers
 		}
 
 		[HttpGet]
-		public ActionResult Create(int Id)
+		public ActionResult Create(int RestaurantId)
 		{
-			var model = _db.Restaurants.Find(Id);
-			ViewBag.Name = model.Name;
-			ViewBag.restaurantId = model.Id;
-			return View(model);
+			Restaurant restaurant = _db.Restaurants.Find(RestaurantId);
+			ViewBag.Name = restaurant.Name;
+            ViewBag.resId = restaurant.Id;
+			return View();
 		}
+
 		[HttpPost]
 		public ActionResult Create(RestaurantReview review)
 		{

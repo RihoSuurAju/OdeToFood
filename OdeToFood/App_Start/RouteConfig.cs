@@ -25,7 +25,7 @@ namespace OdeToFood
 				defaults: new { controller = "Seafood", action = "Search", culture = "", food = "" }
 			);
 
-			routes.MapRoute(
+            routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
