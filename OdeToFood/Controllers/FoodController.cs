@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace OdeToFood.Controllers
 {
-    public class SeafoodController : Controller
+    public class FoodController : Controller
     {
         // GET: Seafood
         public ActionResult Search(string culture, string food)

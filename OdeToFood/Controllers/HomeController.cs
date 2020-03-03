@@ -11,6 +11,11 @@ namespace OdeToFood.Controllers
 	{
 		OdeToFoodDb _db = new OdeToFoodDb();
 
+		public class HomeControllerTest
+		{
+			[TestMethod]
+		}
+
 		public ActionResult Index(string searchTerm = null)
 		{
 			var model =

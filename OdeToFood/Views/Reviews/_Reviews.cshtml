@@ -6,10 +6,10 @@
             @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Body)
+            <b>Description</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReviewerName)
+            <b>Reviewer Name</b>
         </th>
         <th></th>
     </tr>
@@ -26,9 +26,7 @@
                 @Html.DisplayFor(modelItem => item.ReviewerName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
             </td>
         </tr>
     }
