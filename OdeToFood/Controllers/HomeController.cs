@@ -14,6 +14,28 @@ namespace OdeToFood.Controllers
 		public class HomeControllerTest
 		{
 			[TestMethod]
+			public void Index()
+				{
+					// arrange
+					var db = new FakeOdeToFoodDb();
+					db.addSet(TestData.restaurants);
+					HomeController controller = new HomeController(db);
+					controller.ControllerContext = new FakeControllerContext();
+					// act
+					ViewResult result = controller.Index() as ViewResult;
+					IEnumerable<RestaurantListViewModel> model = result.Model as IEnumerable<RestaurantListViewModel>;
+					// alert
+					Assert.AreEqual(10, model.Count());
+				}
+			[TestMethod]
+			public void About()
+			{
+				// arrange
+
+				// act
+
+				// alert
+			}
 		}
 
 		public ActionResult Index(string searchTerm = null)
