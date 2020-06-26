@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Tests.Controllers.Fakes
 {
-	class FakeOdeToFoodDb : OdeToFoodDb
+	/*class FakeOdeToFoodDb : OdeToFoodDb
 	{
 		public Dictionary<Type, object> Sets = new Dictionary<Type, object>();
 		public List<object> Added = new List<object>();
@@ -32,5 +32,5 @@ namespace OdeToFood.Tests.Controllers.Fakes
 		{
 			Updated.Add(entity);
 		}
-	}
+	}*/
 }

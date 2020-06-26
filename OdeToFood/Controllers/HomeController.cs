@@ -11,7 +11,7 @@ namespace OdeToFood.Controllers
 	{
 		OdeToFoodDb _db = new OdeToFoodDb();
 
-		public class HomeControllerTest
+		/*public class HomeControllerTest
 		{
 			[TestMethod]
 			public void Index()
@@ -36,7 +36,7 @@ namespace OdeToFood.Controllers
 
 				// alert
 			}
-		}
+		}*/
 
 		public ActionResult Index(string searchTerm = null)
 		{

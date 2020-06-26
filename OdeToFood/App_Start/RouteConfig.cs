@@ -22,7 +22,7 @@ namespace OdeToFood
 			routes.MapRoute(
 				name: "Food",
 				url: "food/{culture}/{food}",
-				defaults: new { controller = "Seafood", action = "Search", culture = "", food = "" }
+				defaults: new { controller = "Food", action = "Search", culture = "", food = "" }
 			);
 
             routes.MapRoute(

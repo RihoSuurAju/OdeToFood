@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OdeToFood.Tests.Controllers
 {
-	[TestClass]
+	/*[TestClass]
 	class RestaurantControllerTests
 	{
 		private OdeToFoodDb db = new OdeToFoodDb();
@@ -41,5 +41,5 @@ namespace OdeToFood.Tests.Controllers
 			var controller = new RestaurantsController(db);
 			controller.ModelState.AddModelError("", "Invalid");
 		}
-	}
+	}*/
 }

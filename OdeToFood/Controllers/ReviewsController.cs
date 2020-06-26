@@ -14,7 +14,7 @@ namespace OdeToFood.Controllers
 		[ChildActionOnly]
 		public ActionResult BestReview()
 		{
-			var best = from r in _reviews
+			var best = from r in _db.Reviews
 					   orderby r.Rating descending
 					   select r;
 			return PartialView("_Review", best.First());
@@ -97,7 +97,7 @@ namespace OdeToFood.Controllers
 				Name = "Cinnamon Club",
 				City = "London",
 				Country = "UK",
-				Rating = 10
+				Rating = 4
 			},
 
 			new RestaurantReview

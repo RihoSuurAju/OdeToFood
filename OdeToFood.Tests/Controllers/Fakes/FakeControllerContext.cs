@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace OdeToFood.Tests.Controllers.Fakes
 {
-	class FakeControllerContext:ControllerContext
+	/*class FakeControllerContext:ControllerContext
 	{
 		HttpContextBase _context = new FakeHttpContext();
 	}
@@ -24,5 +24,5 @@ namespace OdeToFood.Tests.Controllers.Fakes
 		public override string this[string key] => null;
 		public override int NameValueCollection Header => new
 		NameValueCollection;
-	}
+	}*/
 }

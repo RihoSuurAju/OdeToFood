@@ -1,6 +1,7 @@
 ﻿namespace OdeToFood.Migrations
 {
-    using OdeToFood.Models;
+	using FizzWare.NBuilder;
+	using OdeToFood.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -16,13 +17,15 @@
 
 		protected override void Seed(OdeToFood.Models.OdeToFoodDb context)
         {
-            context.Restaurants.AddOrUpdate(x => x.Id,
-            new Restaurant() { Id = 1, Name = "Mineshop", City = "Minecraftia", Country = "CoolLand" },
-            new Restaurant() { Id = 2, Name = "Luxurious Delicacy", City = "Ouioui", Country = "France" }
-            );
-            context.Reviews.AddOrUpdate(x => x.Id,
-            new RestaurantReview() { Id = 1, Rating = 8, Body = "A nice night out.", ReviewerName = "Joe", RestaurantId = 1 }
-            );
-        }
+			var restaurants = Builder<Restaurant>.CreateListOfSize(60)
+				.All()
+					.With(c => c.Name = Faker.Company.Name())
+					.With(c => c.City = Faker.Address.City())
+					.With(c => c.Country = Faker.Country.Name())
+				.Build();
+
+			context.Restaurants.AddOrUpdate(c => c.Id, restaurants.ToArray());
+
+		}
     }
 }

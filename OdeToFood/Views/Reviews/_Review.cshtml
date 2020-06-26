@@ -1,8 +1,8 @@
 ﻿@model OdeToFood.Models.RestaurantReview
 <div class="review">
-    <h4>@Model.Name</h4>
-    <span>@Model.Rating</span>
-    <p>@Model.City, @Model.Country</p>
+    <h4>@Html.DisplayFor(model => Model.Name)</h4>
+    <span>@Html.DisplayFor(model => Model.Rating)</span>
+    <p>@Html.DisplayFor(model => Model.City), @Html.DisplayFor(model => Model.Country)</p>
     <span class="right">
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
     </span>
